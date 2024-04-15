@@ -11,6 +11,7 @@ pub fn subscribe(product_type: &str, subscriber: Json<Subscriber>) -> Result<Cre
         Ok(f) => Ok(Created::new("/").body(Json::from(f))),
         Err(e) => Err(e)
     };
+}
 
 #[post("/unsubscribe/<product_type>?<url>")]
 pub fn unsubscribe(product_type: &str, url: &str) -> Result<Json<Subscriber>> {
