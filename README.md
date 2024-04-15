@@ -58,17 +58,17 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   ✅ Commit: `Implement delete function in Subscriber repository.`
     -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
+    -   ✅ Commit: `Create Notification service struct skeleton.`
+    -   ✅ Commit: `Implement subscribe function in Notification service.`
+    -   ✅ Commit: `Implement subscribe function in Notification controller.`
+    -   ✅ Commit: `Implement unsubscribe function in Notification service.`
+    -   ✅ Commit: `Implement unsubscribe function in Notification controller.`
     -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   ✅ Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   ✅ Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   ✅ Commit: `Implement publish function in Program service and Program controller.`
+    -   ✅ Commit: `Edit Product service methods to call notify after create/delete.`
     -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
@@ -99,3 +99,10 @@ This is the place for you to write reflections:
 
 
 #### Reflection Publisher-3
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
