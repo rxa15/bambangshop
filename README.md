@@ -56,7 +56,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   ✅ Commit: `Implement add function in Subscriber repository.`
     -   ✅ Commit: `Implement list_all function in Subscriber repository.`
     -   ✅ Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   ✅ Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
     -   ✅ Commit: `Create Notification service struct skeleton.`
     -   ✅ Commit: `Implement subscribe function in Notification service.`
@@ -79,13 +79,15 @@ This is the place for you to write reflections:
 #### Reflection Publisher-1
 1. In the Observer pattern diagram explained by the Head First Design Pattern book, Subscriber is defined as an interface. Explain based on your understanding of Observer design patterns, do we still need an interface (or trait in Rust) in this BambangShop case, or a single Model struct is enough?
 
+In the context of this BambangShop case, we currently only have one type of `Subscriber`, so there is no immediate need for additional interfaces (or traits in Rust). However, if we anticipate future app development where multiple types of subscribers might require different ways of reacting to updates, it would be advisable to use interfaces (or traits in Rust).
 
 2. id in Program and url in Subscriber is intended to be unique. Explain based on your understanding, is using Vec (list) sufficient or using DashMap (map/dictionary) like we currently use is necessary for this case?
 
+DashMap stores data in a key-value format, in contrast to Vec, which employs a list for storage. In the context of the BambangShop case, where `id` in Program and `url` in Subscriber are intended to be unique, using Vec would necessitate manual checks to ensure uniqueness for every inputted `id` and `url`. Therefore, the use of DashMap is recommended here. DashMap inherently manages unique identifiers, ensuring that `id` and `url` inputs remain unique without requiring explicit checks.
 
 3. When programming using Rust, we are enforced by rigorous compiler constraints to make a thread-safe program. In the case of the List of Subscribers (SUBSCRIBERS) static variable, we used the DashMap external library for thread safe HashMap. Explain based on your understanding of design patterns, do we still need DashMap or we can implement Singleton pattern instead?
 
-
+In Rust programming, DashMap is better suited for multithreading. Since Bambangshop utilizes multithreading, DashMap becomes necessary because SUBSCRIBERS will be accessed by multiple threads. Singleton pattern is not applicable here as its purpose is to maintain a single instance of an object throughout the program's execution. However, our focus is on ensuring the safety of data access in a multi-threading scenario. DashMap allows us to securely and efficiently manage the list of subscribers to our products within a single data structure.
 
 #### Reflection Publisher-2
 1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
