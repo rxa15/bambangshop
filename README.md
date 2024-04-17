@@ -63,7 +63,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   ✅ Commit: `Implement subscribe function in Notification controller.`
     -   ✅ Commit: `Implement unsubscribe function in Notification service.`
     -   ✅ Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   ✅ Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   ✅ Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   ✅ Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -92,13 +92,15 @@ In Rust programming, DashMap is better suited for multithreading. Since Bambangs
 #### Reflection Publisher-2
 1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
 
+Separating "Service" and "Repository" from a Model is a part of implementing Design Pattern in our code. Following the Single Responsibility Principle (SRP) in SOLID Principle, Service and Repository need to be distinguished due to their distinct responsibilities. Service primarily manages the business logic of the application, while Repository focuses on data storage handling. This separation will significantly enhance the project's maintainability.
 
 2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
 
+If we only use the Model, there are some problems that will arise. For instance, code coupling and complex business logic in models. Imagine if we only have Program Model, Subscriber Model, and Notification Model. Program Model would need to handle not only the core logic related to program management but also the details of data retrieval and storage. Subscriber Model would need to manage both subscriber-related business logic (such as subscription management, notification preferences) and data access logic. Notification Model would need to handle the generation and sending of notifications, as well as interacting with the underlying data storage.
 
 3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
 
-
+Yes, I have explored deeper into Postman since taking the Platform Based Programming (PBP) class last semester. It assists me in testing the functionality of my program's endpoints. I firmly believe Postman is valuable for testing, as it simplifies the process of testing HTTP responses by sending requests to the developing API. Moreover, Postman provides advanced features like Collaborative Collections, which consolidate multiple HTTP requests, thus facilitating coordination during the development and testing stages of group projects' APIs.
 
 #### Reflection Publisher-3
 1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
