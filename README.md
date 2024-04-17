@@ -69,7 +69,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   ✅ Commit: `Implement notify function in Notification service to notify each Subscriber.`
     -   ✅ Commit: `Implement publish function in Program service and Program controller.`
     -   ✅ Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   ✅ Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -105,8 +105,19 @@ Yes, I have explored deeper into Postman since taking the Platform Based Program
 #### Reflection Publisher-3
 1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
 
+The Observer Pattern that we use in this tutorial is Push model. It can be seen from Publisher that actively pushes data to Subscriber.
 
 2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
 
+Advantages of Using Pull Model:
+- It is more efficient because subscribers have control over when they retrieve update so that they are able to fetch updates only when needed which reduce unnecessary data transfers.
+- It only needs to respond to requests initiated by subscibers so there is usually lower overhead on the server side.
+- It is more scalable when there are a large number of subscriber because each subscriber can pull data independently which reduce the load on the server.
+- It provides flexibility to subscribers because they can pull update based on their specific needs.
+
+Disadvantages of Using Push Model:
+- It requires active requests of pulling updates from subscriber so that the code complexity can be much higher and may introduce latency.
 
 3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+If multithreading is not employed for the notification process, then notifications must be processed sequentially and repeatedly. This implies that each notification will be dispatched to each Subscriber sequentially, one by one, without parallelism. Consequently, this approach will lead to reduced efficiency if SUBSCRIBERS contain a large amount of data or if there are delays in sending notifications.
